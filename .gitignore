@@ -1,0 +1,17 @@
+# Local state and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.openai/
+.codex/
+.agents/
+work/
+node_modules/
+.DS_Store
+Thumbs.db
+# Generated archives and patient-held reports
+*.zip
+*.tar.gz
+sprout-care-report-*.txt

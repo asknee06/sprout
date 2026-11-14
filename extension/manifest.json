@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Sprout — A little room to breathe",
+  "version": "1.7.0",
+  "description": "A gentle pause for heavy short-form videos. Nurture a little tree, at your own pace.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Your Sprout"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.tiktok.com/*",
+        "https://*.instagram.com/*",
+        "https://*.youtube.com/*"
+      ],
+      "js": [
+        "shared/storage.js",
+        "shared/treeRenderer.js",
+        "content/classifier.js",
+        "content/enrichment.js",
+        "content/platformAdapters.js",
+        "content/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
